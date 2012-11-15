@@ -12,6 +12,8 @@
  * scope=likes+comments
  * 
  */
+
+//http_request and Instagram.php reside in the library directory for a CodeIgniter project
 require_once('http_request.php');
 
 class Instagram
@@ -265,7 +267,6 @@ class Instagram
 		return $result;
 	}
 	
-	
   /**
    * Returns a user's recent media feed
    * 
@@ -284,10 +285,7 @@ class Instagram
 	 * ### Returns
    *
    *   * JSON object with user data
-   */
-	
-	
-	
+   */	
 	public function get_user_recent_media($user_id,$access_token,$options=NULL)
 	{
 		
@@ -303,9 +301,7 @@ class Instagram
 			}
 			
 		}
-		print_r($payload);
 		$endpoint = $this->base_url."users/$user_id/media/recent/";
-		#echo "$endpoint";
 		$result = $this->http_request->get($endpoint,$payload);
 		return $result;
 	}
