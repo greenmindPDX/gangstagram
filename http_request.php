@@ -51,7 +51,8 @@ class HTTPRequest
   public function __construct($url = null)
   {
     $this->CI = get_instance();
-    $this->header = array('CHIRPIFY-API-KEY: ' . CHIRPIFY_API_KEY);
+		//supply any necessary headers here
+    $this->header = array();
     $this->do_not_exit = false;
     $this->set_valid_response_codes();
     if($url)
@@ -123,11 +124,6 @@ class HTTPRequest
       foreach($payload as $v)
       {
         $payload_arr[] = urlencode($v);
-      }
-      if (array_key_exists('file', $payload))
-      {
-        header("Content-Type: application/csv");
-        header("Content-disposition: attachment; filename=purchase-report.csv");
       }
       $this->url = $url . '/' . implode('/', $payload_arr); 
     }
