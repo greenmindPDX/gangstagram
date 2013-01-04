@@ -1,6 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require_once('http_request.php');
+require_once('../libraries/http_request.php');
+
+/**
+	 *  Attempts to create a Pubsubhubbub subscription to Instagram's real-time updates
+	 *  We include this for your benefit but Chirpify abandoned the real-time update because it was unreliable. 
+	 */
+
 
 class Subscribe extends MY_Controller
 {
@@ -12,9 +18,7 @@ class Subscribe extends MY_Controller
   }
 	
 	
-	//Attempts to create a Pubsubhubbub subscription to Instagram's real-time updates
-	//calling this function as URL/subscribe/user
-  function user()
+	function user()
   {
 		$postfields = array(
 		  'client_id'			=> INSTAGRAM_CLIENT_ID,
@@ -86,7 +90,7 @@ class Subscribe extends MY_Controller
 		{
 			
 			$data = json_decode(file_get_contents('php://input'));		
-			//send to API to process
+	
 			foreach($data as $obj)
 			{
 				$object_id = $obj->object_id;
@@ -96,7 +100,7 @@ class Subscribe extends MY_Controller
 					'time' => $time,
 					'object_id' => $object_id
 				);
-				//now send $payload to a worker or database for processing...
+				//now send $payload somewhere else for processing...
 			}			
 		}
 		

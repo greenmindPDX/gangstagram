@@ -78,7 +78,10 @@ class Example extends CI_Controller {
     $data_dump = json_decode($this->insta->get_user_from_id($user_id,$access_token));
 		var_dump($data_dump);
 	}
-	
+	/**
+	 * several of the API endpoints offer options for count and min/max timestamps
+	 * in this library they are packaged as an options array.
+	 */
 	function get_user_recent_media()
 	{
     $access_token = "321.786";

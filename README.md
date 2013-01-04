@@ -16,7 +16,9 @@ A few useful points
     If your application requires reliable updates from users', poll them using the API, using the user's access token.
 
     To be able to set comments on behalf of users you now have to email 
-    apidevelopers[at]instagram.com and ask for permission. 
+    apidevelopers[at]instagram.com and ask for permission.
+
+    Timestamps are UTC.  
 
 
 

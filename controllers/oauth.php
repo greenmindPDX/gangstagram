@@ -1,13 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require_once('http_request.php');
+require_once('../libraries/http_request.php');
 
 class Oauth  extends CI_Controller {
 
 	/**
 	 * Enter your redirect URL here. This MUST match the redirect supplied to Instagram when you registered your client.
 	 * Your redirect URL has to be on a public-facing webserver. 
-	 * You'll have to define constants somewhere, like CI's config.php. 
+	 * You'll have to define constants somewhere, like CI's constants.php. 
+	 * Authentication is 3 basic steps. 
+	 * 1. Send user from a link on your app, including your client_id.
+	 * 2. if Oauth goes through, Instagram will send a code value in the query string.
+	 * 3. Exchange this code via a Curl post request for an access_token. 
 	 */
 	
 	function __construct() 
@@ -63,7 +67,7 @@ class Oauth  extends CI_Controller {
 	  $url = "https://api.instagram.com/oauth/access_token";
 		//Step 3 post the following back to Instagram	
 	  $response = $this->http->request->post($url,$postfields);
-		//response is JSON user objec
+		//response is JSON user object, include's users' access_token.
 		echo $response;		
 		
 	 }
