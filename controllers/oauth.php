@@ -4,10 +4,14 @@ require_once('http_request.php');
 
 class Oauth  extends CI_Controller {
 
+	/**
+	 * Enter your redirect URL here. This MUST match the redirect supplied to Instagram when you registered your client.
+	 * Your redirect URL has to be on a public-facing webserver. 
+	 * You'll have to define constants somewhere, like CI's config.php. 
+	 */
 	
 	function __construct() 
 	{
-		//enter your redirect URL here. This MUST match the redirect supplied to Instagram when you registered your client.
    	$redirect_url = 	"";
     $this->http_request = new HTTPRequest();
 		$base_url = INSTAGRAM_API_ROOT;
@@ -15,7 +19,12 @@ class Oauth  extends CI_Controller {
 	  $client_secret = INSTAGRAM_CLIENT_SECRET;
 	}
 	
-	//routed as url/Oauth/send in CI
+
+	/**
+	 * method to authenticate Instagram using their dialogue box.  
+	 * scope shows what you want your app to be able to do. In this case, we are asking users to post comments and likes on their behalf.
+	 */
+	
   function send()
 	{
 		$redirect_url = $this->redirect_url;
