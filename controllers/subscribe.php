@@ -31,7 +31,7 @@ class Subscribe extends MY_Controller
   }
 
 /***
- * initial 1GET request sent by Instagram's subscribe endpoint in user()
+ * initial GET request sent by Instagram's subscribe endpoint in user()
  * processed GET internally because it's not accepted by CI
  * if GET,  echo out the hub.challenge part of the get response from Instagram to confirm subscription
  * 

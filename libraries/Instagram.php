@@ -1,15 +1,17 @@
 <?php
-/*
+/***
  * Based on http://instagram.com/developer/endpoints/
- * most of these functions require the access token.
+ * This is a partial implementation of the Instagram API. Several endpoints were not included
+ * because we don't use them at Chirpify.
+ * Many endpoints have additional optional parameters, which we aren't using.
+ * A sample implentation of the optional parameters is included in the  get_user_recent_media() method
+ * 
+ * IMPORTANT: Most of these functions require the access token.
  * to get an access token, you need to get an authorized user for the client. 
  * when you register your app at http://instagram.com/developer/register/
  * you receive a CLIENT_ID and CLIENT_SECRET
  * 
  * if you don't need to be authorized, you only need a client id. 
- * 
- * SCOPE: 
- * scope=likes+comments
  * 
  */
 
