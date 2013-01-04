@@ -12,7 +12,7 @@ class Oauth  extends CI_Controller {
 	
 	function __construct() 
 	{
-   	$redirect_url = 	"";
+    $redirect_url = 	"";
     $this->http_request = new HTTPRequest();
 		$base_url = INSTAGRAM_API_ROOT;
 	  $client_id = INSTAGRAM_CLIENT_ID;

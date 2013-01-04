@@ -12,10 +12,12 @@ Released under a BSD license.
 
 A few useful points
 
-    The Realtime Updates (using the pubsubhubbub protocol) is notoriously leaky. If your application requires reliable updates from users', 
-    poll them using the API, using the user's access token.
+    The Realtime Updates (using the pubsubhubbub protocol) are notoriously leaky. They seem to work 80% of the time. 
+    If your application requires reliable updates from users', poll them using the API, using the user's access token.
 
-    To be able to set comments on behalf of users you now have to email apidevelopers[at]instagram.com and ask for permission. 
+    To be able to set comments on behalf of users you now have to email 
+    apidevelopers[at]instagram.com and ask for permission. 
+
 
 
 
